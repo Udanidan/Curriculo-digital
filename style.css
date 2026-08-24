@@ -1,3 +1,12 @@
+/*
+----------------------------------------------------------
+Dev: udanidan
+Objetivo: Realizar a estilização do curriculo de forma modular
+que permita a criação de novos curriculos sem grandes alerações.
+Ultima alteração: 25/07/26
+----------------------------------------------------------
+*/
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0px;
@@ -8,35 +17,22 @@ body {
 main{
     display: flex;
     flex-direction: row;
+    padding: 10px;
+    gap: 30px;
 }
-section{
-    margin: 10px;
-}
-
 #menu-lateral{
-    margin-right: 10px;
-    background-color: #02bbc2;
+    display: flex;
+    flex-direction: column;
     box-shadow: 3px 3px 10px #6d6d6d;
     border-radius: 15px;
 }
-#menu-lateral a{
-    padding: 10px;
-    background-color: white;
-    color: #02bbc2;
-    border-radius: 10px;
-    transition: background-color 0.2s;
-}
 .menu-lateral-img{
-    text-align: center;
+    display: flex;
 }
 #menu-lateral img{
     height: 300px;
     margin: 20px auto;
     border-radius: 15px;
-}
-#menu-lateral a:hover{
-    background-color: #26e4eb;
-    color: white;
 }
 #menu-lateral h1, #menu-lateral h2{
     color: white;
@@ -49,14 +45,6 @@ section{
     accent-color: white;
     border: 1px solid transparent;
     border-radius: 10px;
-}
-.aling-progress{
-    display: flex;
-}
-.aling-progress-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 progress::-webkit-progress-bar {
@@ -89,20 +77,63 @@ a{
 }
 
 #box-menu{
-    background-color: #02bbc2;
+    /* background-color: #02bbc2; */
     color: white;
 }
-.menu{
+.button_menu{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 5px;
     padding: 0px;
     margin: 0px;
     list-style-type: none;
 }
-ul{
-    list-style-type: none;
+.button_menu a{
+    display: block;
+    width: max-content;
+    padding: 10px;
+    background-color: white;
+    color: #02bbc2;
+    border-radius: 10px;
+    transition: background-color 0.2s;
 }
-.tema ul li::before {
+.button_menu a:hover{
+    background-color: #26e4eb;
+    color: white;
+}
+.link_menu{
+    display: none;
+    list-style: none;
+}
+#topicos{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 10px;
+}
+article{
+    border-radius: 15px;
+    padding: 4px 20px;
+}
+#imprimir{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    min-width: min-content;
+    max-width: fit-content;
+    border: 0 solid;
+    border-radius: 5px;
+    align-self: flex-end;
+    margin: 0px 10px;
+}
+.topico{
+    min-width: 0px;
+    width: auto;
+    background-color: white;
+    box-shadow: 3px 3px 10px #6d6d6d;
+}
+.topico ul li::before {
     content: "";
     display: inline-block;
     width: 20px;
@@ -114,21 +145,26 @@ ul{
     vertical-align: middle;
 }
 
-article{
-    border-radius: 15px;
-    padding: 4px 20px;
+
+.posts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 10px;
 }
-.tema{
-    background-color: white;
-    box-shadow: 3px 3px 10px #6d6d6d;
-    margin: 10px auto;
+.post{
+    background-color: rgb(238, 238, 238);
+    max-width: 350px;
+    padding: 5px;
 }
 
 @media screen and (max-width: 800px) {
     main{
         display: flex;
         flex-direction: column;
-        align-items: center;
+        /* align-items: center; */
     }
     section{
         box-shadow: none;
@@ -139,4 +175,87 @@ article{
     article{
         box-shadow: none;
     }
+}
+
+@media print{
+    @page{
+        size: auto;
+        margin: 0;
+    }
+    *{
+        border: none;
+    }
+    body{
+        margin: 1cm;
+    }
+    main{
+        flex-direction: column;
+        gap: 10px;
+    }
+    #menu-lateral{
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid black;
+    }
+    #menu-lateral h1{
+        font-size: 28pt;
+        color: black;
+        margin: 0 0 5px 0;
+    }
+    .menu-lateral-img, .menu-lateral-img *{
+        display: none;
+    }
+    tbody{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0px;
+        padding: 0px; 
+    }
+    progress, #menu-lateral h2{
+        display: none;
+    }
+    #menu-lateral p{
+        color: gray;
+    }
+    h2{
+        margin: 5px;
+        font-size: 16pt;
+    }
+    h3{
+        font-size: 15pt;
+        margin: 4px 0;
+    }
+    p{
+        font-size: 12pt;
+    }
+    #topicos{
+        gap: 2px;
+    }
+    .topico{
+        box-shadow: none;
+    }
+    article{
+        border:none;
+        padding: 0;
+    }
+    #portifolio, #portifolio *{
+    display: none;
+    }
+
+    #imprimir{
+        display: none;
+    }
+
+    .button_menu{
+        display: none;
+    }
+    .link_menu{
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
 }

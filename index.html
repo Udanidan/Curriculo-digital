@@ -4,55 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="imprimir.js"></script>
     <title>Curriculo</title>
+    <style>
+        .cor-fundo{
+            background-color: #02bbc2;
+        }
+    </style>
 </head>
 <body>
     <main>
-        <section id="menu-lateral">
-            <h1>Olá, me chamo Daniel</h1>
+        <section id="menu-lateral" class="cor-fundo">
+            <h1>Daniel</h1>
 
             <div class="menu-lateral-img"><img src="https://media.licdn.com/dms/image/v2/D4D03AQFvJd5dKxhTJQ/profile-displayphoto-shrink_200_200/B4DZYvrVA6G4AY-/0/1744556613033?e=2147483647&v=beta&t=vcfFsJG-aaz67lDVg82S-_WRuBQFVQYsU5vZ6jkMgZw" alt=""></div>
 
             <article id="box-menu">
-                <ul class="menu">
-                    <li><a href="https://www.linkedin.com/in/daniel-da-silva-pereira-2ab525352" target="_blank"><strong>LinkedIn</strong></a></li>
+                <ul class="button_menu">
+                    <a href="https://www.linkedin.com/in/daniel-da-silva-pereira-2ab525352" target="_blank"><li><strong>LinkedIn</strong></li></a>
 
-                    <li><a href="https:/www.github.com/Udanidan" target="_blank"><strong>Github</strong></a></li>
+                    <a href="https:/www.github.com/Udanidan" target="_blank"><li><strong>Github</strong></li></a>
 
-                    <li><a href="mailto:udani.pereira@gmail.com" target="_blank"><strong>E-mail</strong></a></li>
+                    <a href="mailto:udani.pereira@gmail.com" target="_blank"><li><strong>E-mail</strong></li></a>
                 </ul>
             </article>
 
             <h2>Habilidades</h2>
-            <article class="aling-progress">
-                <div>
-                    <div class="aling-progress-container">
-                        <p>HTML5 e CSS</p> <progress value="90" max="100"></progress>
-                    </div>
-                    <div class="aling-progress-container">
-                        <p>Python</p> <progress value="75" max="100"></progress>
-                    </div>
-                    <div class="aling-progress-container">
-                        <p>Javascript</p> <progress value="65" max="100"></progress>
-                    </div>
-                    <div class="aling-progress-container">
-                        <p>Arduino e C++</p> <progress value="70" max="100"></progress>
-                    </div>
-                    <div class="aling-progress-container">
-                        <p>Java</p> <progress value="75" max="100"></progress>
-                    </div>
-                </div>
-            </article>
+            <table class="aling-progress">
+                <thead>
+                    <tr style="display: none;">
+                        <th>nome</th>
+                        <th>progresso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><p>HTML e CSS</p></td>
+                        <td><progress value="90" max="100"></progress></td>
+                    </tr>
+                    <tr>
+                        <td><p>Python</p></td>
+                        <td><progress value="75" max="100"></progress></td>
+                    </tr>
+                    <tr>
+                        <td><p>Javascript</p></td>
+                        <td><progress value="65" max="100"></progress></td>
+                    </tr>
+                    <tr>
+                        <td><p>Arduino e C++</p></td>
+                        <td><progress value="70" max="100"></progress></td>
+                    </tr>
+                    <tr>
+                        <td><p>Java</p></td>
+                        <td><progress value="75" max="100"></progress></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
-        <section>
-            <article class="tema">
+        <section id="topicos">
+            <ul class="link_menu">
+                <a href="https://www.linkedin.com/in/daniel-da-silva-pereira-2ab525352" target="_blank"><li><strong>LinkedIn</strong></li></a>
+    
+                <a href="https:/www.github.com/Udanidan" target="_blank"><li><strong>Github</strong></li></a>
+    
+                <a href="mailto:udani.pereira@gmail.com" target="_blank"><li><strong>E-mail</strong></li></a>
+            </ul>
+            <button onclick="imprimir()" id="imprimir">imprimir</button>
+            <article class="topico">
                 <h2>Apresentação</h2>
                 <p>
                 Estudante de Análise e Desenvolvimento de Sistemas com conhecimento web. Com habilidades comunicativas, interessado em novos conhecimentos, experiência em projetos e trabalho em equipe. Em busca de novas oportunidades no mercado de tecnologia.
                 </p>
             </article>
 
-            <article class="tema">
+            <article class="topico">
                 <h2>Formação acadêmica</h2>
                 <h3>2025 - Atualmente | Análise e desenvolvimento de sistemas</h3>
                 <p>Fatec Ferraz de Vasconcelos</p>
@@ -61,8 +86,8 @@
                 <p>Etec Martin Luther King</p>
             </article>
 
-            <article class="tema">
-                <h2>certificados</h2>
+            <article class="topico">
+                <h2>Certificados</h2>
                 <ul>
                     <li><a target="_blank" href="https://www.credly.com/earner/earned/badge/3d7d0377-c9e5-4de7-abf6-805cf5866cfc">Python essentials I</a></li>
                     <li><a href="https://www.credly.com/earner/earned/badge/8b206f13-aab8-4920-8204-d344148c8162">Javascript essentials I</a></li>
@@ -70,16 +95,17 @@
                 </ul>
             </article>
 
-            <article class="tema">
+            <article class="topico">
                 <h2>Experiência profissional</h2>
-
-                <h3>Instrutor de piano</h3>
-                <h3>Musical Easy | Fev. 2025 - Abril 2025</h3>
-                <p>Preparação, ministração e organização de aulas e atividades, acompanhamento especializado e personalizado de alunos, plantão de dúvidas e atividades extras de aprimoramento individual.</p>
 
                 <h3>Agente de atendimento</h3>
                 <h3>Provider e AlmavivA | Nov. 2025 - Atualmente</h3>
                 <p>Atendendo clientes buscando ajudá-los a resolver as situações enfrentadas de forma eficiente e prática, utilizando de habilidades comunicativas e agilidade para solucionar problemas em situações de pressão.</p>
+                
+                <h3>Instrutor de piano</h3>
+                <h3>Musical Easy | Fev. 2025 - Abril 2025</h3>
+                <p>Preparação, ministração e organização de aulas e atividades, acompanhamento especializado e personalizado de alunos, plantão de dúvidas e atividades extras de aprimoramento individual.</p>
+
             </article>
         </section>
     </main>
