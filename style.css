@@ -64,12 +64,15 @@ h1{
 h1, h2{
     color: #02bbc2;
     font-size: 26px;
+    
 }
 h3{
     font-size: 20px;
+    margin: 0px 0 10px 0;
 }
 p{
     font-size: 18px;
+    margin: 10px;
 }
 a{
     color: #02bbc2;
@@ -79,6 +82,7 @@ a{
 #box-menu{
     /* background-color: #02bbc2; */
     color: white;
+    margin: 0;
 }
 .button_menu{
     display: flex;
@@ -197,9 +201,10 @@ article{
         border-radius: 0;
         box-shadow: none;
         border-bottom: 1px solid black;
+        margin: 0px;
     }
     #menu-lateral h1{
-        font-size: 28pt;
+        font-size: 24pt;
         color: black;
         margin: 0 0 5px 0;
     }
@@ -220,11 +225,11 @@ article{
         color: gray;
     }
     h2{
-        margin: 5px;
+        margin: 5px 0;
         font-size: 16pt;
     }
     h3{
-        font-size: 15pt;
+        font-size: 14pt;
         margin: 4px 0;
     }
     p{
